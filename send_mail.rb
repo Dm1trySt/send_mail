@@ -13,6 +13,9 @@ password = STDIN.noecho(&:gets).chomp
 puts "Кому отправить письмо?"
 send_to = STDIN.gets.chomp
 
+puts "Тема письма:"
+theme = STDIN.gets.chomp
+
 puts "Что написать в письме?"
 body = STDIN.gets.chomp
 
@@ -21,7 +24,7 @@ body = STDIN.gets.chomp
 Pony.mail(
         # Используем хэш-массив
         {
-            subject: 'Привет из программы на руби!', # тема письма
+            subject: theme, # тема письма
             body: body, # текст письма, его тело
             to: send_to, # кому отправить письмо
             from: my_mail, # от кого письмо (наш обратный адрес)
